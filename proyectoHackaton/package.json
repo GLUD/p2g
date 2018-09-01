@@ -1,0 +1,22 @@
+{
+  "name": "proyectohackaton",
+  "version": "1.0.0",
+  "description": "Servidor del juego integrando el arduino con los datos de temperatura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "temperatura",
+    "juego",
+    "arduino"
+  ],
+  "author": "camila,sebastian,duvan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "serialport": "^7.0.2",
+    "socket.io": "^2.1.1"
+  }
+}
