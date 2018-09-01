@@ -1,8 +1,7 @@
 # GARBAGE COLLECTOR
 Proyecto para participar en la Hackaton SLUD 2018
 
-Inline-style:
-![Logo](assets/doc/logo.png "Logo")
+![alt text](https://github.com/GLUD/p2g/blob/arduino2/proyectoHackaton/p2g-juego/assets/doc/logo.png?raw=true)
 
 ## Equipo
 Duvan Prieto
@@ -51,11 +50,11 @@ Cuando inicias el juego vas a aparecer en algún punto de la pantalla donde tien
 
 Pero te preguntaras para que el arduino, dependiendo de la temperatura del ambiente van a cambiar las condiciones del campo como las de los elementos.
 ##### Nivel de nieve
-![Nieve](assets/doc/nieveJuego.PNG)  
+![Nieve](https://github.com/GLUD/p2g/blob/arduino2/proyectoHackaton/p2g-juego/assets/doc/nieveJuego.PNG)  
 ##### Nivel de sol
-![Sol](assets/doc/solJuego.PNG)  
+![Sol](https://github.com/GLUD/p2g/blob/arduino2/proyectoHackaton/p2g-juego/assets/doc/solJuego.PNG)  
 ##### Nivel de frio
-![Frio](assets/doc/frioJuego.PNG)
+![Frio](https://github.com/GLUD/p2g/blob/arduino2/proyectoHackaton/p2g-juego/assets/doc/frioJuego.PNG?raw=true)
 ## Contacto
 
 Si tienes dudas contactate por medio de
