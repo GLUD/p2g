@@ -1,5 +1,5 @@
 var teclado;
-
+var puntaje=500;
 const config = {
     width: 320*4,
     height: 180*4,
@@ -95,76 +95,22 @@ var cindyThrow = {
     can.body.setVelocity(0,0);
 
     this.add.image(1150,150, "logo").setScale(0.3);
-    this.add.image(600,600, "basura1").setScale(2,2);
-    this.add.image(800,600, "basura2").setScale(2,2);
+    var ba1 = this.add.image(600,600, "basura1").setScale(2,2);
+    var ba2 = this.add.image(800,600, "basura2").setScale(2,2);
     this.add.image(360,360, "basura3").setScale(2,2);
     this.add.image(480,480, "basura4").setScale(2,2);
 
 
-    //cin.setCollideWorldBounds(true);
-
-   /*  cindyRev = cindy.flipX
-    console.log(cindyRev);
-
-    var cindyReversa = {
-        key: "cindyReversa",
-        frames : this.anims.generateFrameNumbers("cindyRev",{start:10, end:0}),
-        frameRate : 20,
-        yoyo : true,
-        repeat: -1
-    };
-    
-        cindyR = this.anims.create(cindyReversa);
-        console.log(cindyR);
-        cinR = this.add.sprite(70, 600, "cindyRev");
-        cinR.setDisplaySize(180,180)
-        console.log(cinR); 
-        cinR.anims.load("cindyReversa"); */
-//Cargar la animación
-    //p1.anims.load('walk');
-
-//arr = this.anims.generateFrameNumbers('georgie');
-//arrDerecha = [arr[3], arr[7], arr[11],arr[15]];
-//console.log(arr[3], arr[7], arr[15]);
-// First Character 
-// Aqui se definen las animaciones y el numero de frames (sprites) que se utilizan
-   /*  var a = {
-        key: 'walk',
-        frames: this.anims.generateFrameNumbers('georgie'),
-        frameRate: 6,
-        yoyo: true,
-        repeat: -1
-    }; */
-
-//Crear la animación
-   /*  anim = this.anims.create(a);
-    console.log(anim);
-    p1 = this.add.sprite(70, 600, "georgie");
-    p1.setDisplaySize(180,180)
-    console.log(p1); */
-//Cargar la animación
-    //p1.anims.load('walk');
-
-//física del juego 
-    /* this.p1.anchor.set(0.5);
-	this.physics.enable(this.p1, Phaser.Physics.ARCADE);
-	this.p1.body.collideWorldBounds = true; */
-
-    // var mD = {
-    //      key: "movDerecha",
-    //      frames: this.anims.generateFrameNumbers("georgie", arr[3]),
-    //      frameRate: 1,
-    //      yoyo: false,
-    //      repeat: -1
-    //  };
-
-    // animationRight = this.anims.create(mD);
-    // console.log(animationRight);
-    // p1.anims.load("movDerecha");
+   
 
 //Events
     this.input.keyboard.on('keydown_SPACE', function (event) {
-        cin.anims.play("cindyArroja");
+        if(cin.body.x-){
+            cin.anims.play("cindyArroja");
+        }else{
+            cin.anims.play("cindyArroja");
+        }
+        
 
     });
 
@@ -174,21 +120,7 @@ var cindyThrow = {
 
     });
 
-    if((cin.body.x-can.body.x > 0 && cin.body.x-can.body.x < 25) && teclado.up.isDown){
-        console.log("Algo iinteresante pasa aqio");
-    }
-    this.input.keyboard.on('keydown_P', function (event) {
 
-        /* if (p1.anims.isPaused)
-        {
-            p1.anims.resume();
-        }
-        else
-        {
-            p1.anims.pause();
-        } */
-
-    });
    
     this.input.keyboard.on("keydown_RIGHT", function (event) {
             console.log("hola mundo");
@@ -200,14 +132,13 @@ var cindyThrow = {
                 cin.anims.play("cindyCamina");
                 cin.body.velocity.x += 40;
             }
-            //p1.anims.play("movDerecha");
     });
 
     this.input.keyboard.on("keydown_LEFT", function (event) {
         console.log("hola mundo reversa");
         cin.flipX=true;
         cin.body.velocity.x -= 40;
-        //p1.anims.play("movDerecha");
+
 });
 
 }
