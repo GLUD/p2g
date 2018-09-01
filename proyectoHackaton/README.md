@@ -2,7 +2,7 @@
 Proyecto para participar en la Hackaton SLUD 2018
 
 Inline-style:
-![alt text](https://avatars3.githubusercontent.com/u/28215125?s=400&u=2d7015396dddf1c884371ef27feecfd4fc25eaf3&v=4)
+![alt text](https://github.com/GLUD/p2g/blob/arduino2/proyectoHackaton/p2g-juego/assets/doc/logo.png?raw=true)
 
 ## Equipo
 Duvan Prieto
