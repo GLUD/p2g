@@ -28,6 +28,7 @@ function preload(){
     this.load.image("fondoT", "assets/bg/wallTemplado.png");
     this.load.image("fondoF", "assets/bg/cold.jpg");
     this.load.image("fondoN", "assets/bg/snow.jpg");
+    this.load.image("caneca", "assets/sprites/bin.png");
     this.load.spritesheet("georgie","assets/sprites/george.png",{ frameWidth: 48, frameHeight: 48},16);
     this.load.spritesheet("cindy","assets/sprites/girl.png",{ frameWidth: 96, frameHeight: 130},21);
     
@@ -37,11 +38,9 @@ function create(){
     console.log("Soy create");
 
 //Adicion imagenes y sprites
-    var georgie = this.add.sprite(100, 100, "georgie");
-    var cindy = this.add.sprite(120,120, "cindy");
-    this.add.image(500,120, "fondoT");
-    this.add.image(50,120, "fondoT");
-    
+    this.add.image(500,120, "fondoN");
+    var can = this.add.image(1200,570, "caneca").setScale(0.2,0.2);
+
     
 
 //Buttons
@@ -61,15 +60,32 @@ var cindyWalk = {
     repeat: -1
 };
 
+var cindyThrow = {
+    key: "cindyArroja",
+    frames : this.anims.generateFrameNumbers('cindy',{start:17, end:17}),
+    frameRate : 1,
+    yoyo : true,
+    repeat: -1
+};
+
+
     cindyC = this.anims.create(cindyWalk);
+    cindyA = this.anims.create(cindyThrow);
+
     console.log(cindyC);
+    console.log(cindyA);
+
     cin = this.add.sprite(70, 600, "cindy");
     cin.setDisplaySize(180,180)
     console.log(cin); 
+
+
     cin.anims.load("cindyCamina");
+    cin.anims.load("cindyArroja");
 
     this.physics.world.enable([ cin ]);
     cin.body.setVelocity(0,0);
+    //cin.setCollideWorldBounds(true);
 
    /*  cindyRev = cindy.flipX
     console.log(cindyRev);
@@ -132,7 +148,7 @@ var cindyWalk = {
 
 //Events
     this.input.keyboard.on('keydown_SPACE', function (event) {
-        //p1.anims.play('walk');
+        cin.anims.play("cindyArroja");
 
     });
 
