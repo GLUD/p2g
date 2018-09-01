@@ -47,10 +47,10 @@ void medirTempHum(){
   // Compute heat index in Celsius (isFahreheit = false)
   float hic = dht.computeHeatIndex(t, h, false);
 
-  Serial.print("Humidity: ");
+  Serial.print("Humedad: ");
   Serial.print(h);
   Serial.print(" %\t");
-  Serial.print("Temperature: ");
+  Serial.print("Temperatura: ");
   Serial.print(t);
   Serial.print(" *C ");
   Serial.print(f);
