@@ -1,7 +1,6 @@
 # GARBAGE COLLECTOR
 Proyecto para participar en la Hackaton SLUD 2018
 
-Inline-style:
 ![alt text](https://github.com/GLUD/p2g/blob/arduino2/proyectoHackaton/p2g-juego/assets/doc/logo.png?raw=true)
 
 ## Equipo
