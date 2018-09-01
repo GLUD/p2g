@@ -11,7 +11,7 @@ const io = socketIo.listen(server);
 //del Arduino
 const Serialport = require('serialport');
 const Readline = Serialport.parsers.Readline;
-const mySerial = new Serialport('/dev/ttyACM1',{
+const mySerial = new Serialport('/dev/ttyUSB0',{
   baudRate: 9600
 });
 //Lee la temperatura que el sensor muestra
@@ -27,7 +27,9 @@ parser.on('open',function () {
 });
 //Envío de la información del servidor al cliente que es el juego
 parser.on('data', function (data) {
-  console.log(data);
+  //console.log(data);
+  var arrData = data.toString().split(" ");
+  //console.log(arrData);
   io.emit('temp',data.toString());
 });
 //Una alerta en caso de presentar error

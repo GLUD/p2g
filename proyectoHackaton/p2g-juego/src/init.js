@@ -1,3 +1,7 @@
+var socket = io('http://localhost:3000');
+var temperatura =0;
+var calAire = 0;
+var porHume = 0;
 var teclado;
 var puntaje=500;
 const config = {
@@ -25,7 +29,7 @@ function preload(){
 //Precarga de imagenes,sprites, sonidos, teclado.
     teclado = this.input.keyboard.createCursorKeys();
     console.log("Soy preload");
-    this.load.image("logo", "assets/logo.png");
+    this.load.image("logo", "assets/doc/logo.png");
     this.load.image("fondoT", "assets/bg/wallTemplado.png");
     this.load.image("fondoF", "assets/bg/cold.jpg");
     this.load.image("fondoN", "assets/bg/snow.jpg");
@@ -36,17 +40,26 @@ function preload(){
     this.load.image("basura4", "assets/sprites/treeAlien_small.png");
     this.load.spritesheet("georgie","assets/sprites/george.png",{ frameWidth: 48, frameHeight: 48},16);
     this.load.spritesheet("cindy","assets/sprites/girl.png",{ frameWidth: 96, frameHeight: 130},21);
-    
+
 }
+//lectura de datos desde el arduino
 
 function create(){
     console.log("Soy create");
-
 //Adicion imagenes y sprites
-    this.add.image(500,120, "fondoN");
+    this.add.image(500,120,"fondoF");
+    socket.on('temp',function (data) {
+      console.log(data);
+      temperatura = data;
+      var arrData = data.toString().split(" ");
+      calAire = parseInt(arrData[0]);
+      porHume = parseInt(arrData[1]);
+      temperatura = parseInt(arrData[2]);
+    });
+
     var can = this.add.image(1200,570, "caneca").setScale(0.2,0.2);
 
-    
+
 
 //Buttons
     this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -82,7 +95,7 @@ var cindyThrow = {
 
     cin = this.add.sprite(70, 600, "cindy");
     cin.setDisplaySize(180,180)
-    console.log(cin); 
+    console.log(cin);
 
 
     cin.anims.load("cindyCamina");
@@ -101,7 +114,7 @@ var cindyThrow = {
     this.add.image(480,480, "basura4").setScale(2,2);
 
 
-   
+
 
 //Events
     /* this.input.keyboard.on('keydown_SPACE', function (event) {
@@ -110,7 +123,7 @@ var cindyThrow = {
         }else{
             cin.anims.play("cindyArroja");
         }
-        
+
 
     });
  */
@@ -122,18 +135,19 @@ var cindyThrow = {
     });
 
 
-   
+
     this.input.keyboard.on("keydown_RIGHT", function (event) {
             console.log("hola mundo");
            if (cin.flipX==true){
             cin.flipX=false;
             cin.anims.play("cindyCamina");
             cin.body.velocity.x += 40;}
-            else{    
+            else{
                 cin.anims.play("cindyCamina");
                 cin.body.velocity.x += 40;
             }
     });
+    //var pantalla =
 
     this.input.keyboard.on("keydown_LEFT", function (event) {
         console.log("hola mundo reversa");
@@ -145,16 +159,28 @@ var cindyThrow = {
 }
 
 function update(time, delta){
+  //int contador= 0;
+  if (calAire>48){
+    int contador= 0;
+    this.add.image(500,120,"fondoT");
+  }else if (calAire<=48 && calAire > 10){
+    int contador= 0;
+    this.add.image(500,120,"fondoF");
+  }else {
+    int contador= 0;
+    this.add.image(500,120,"fondoN");
+  }
+    //contador++;
      if(teclado.left.isDown) {
         console.log("Izquierda");
-    } 
+    }
     if(teclado.right.isDown) {
         console.log("Derecha");
-    } 
+    }
     if(teclado.down.isDown) {
         console.log("Abajo");
-    } 
+    }
     if(teclado.up.isDown) {
         console.log("Arriba");
-    } 
+    }
 }

@@ -1,0 +1,7 @@
+https://kenney.nl/assets/foliage-pack Arbolitos
+https://kenney.nl/assets/modular-characters Personajes
+https://kenney.nl/assets/hexagon-pack hexagonos ambientes
+https://kenney.nl/assets/background-elements fondo
+https://kenney.nl/assets/isometric-roads-water agua
+https://kenney.nl/assets/platformer-art-extended-tileset tierra
+https://phaser.io/examples/v2/category/filters filtros presentacion

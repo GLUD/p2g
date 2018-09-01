@@ -1,0 +1,16 @@
+#cabecera {
+    text-align: center;
+    color: #ffff;
+}
+
+body{
+    background-color:  #1a75ff;
+    
+}
+#container{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    border: 3px solid #00b33c;
+    padding: 10px;
+}
