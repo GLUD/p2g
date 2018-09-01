@@ -14,18 +14,13 @@ void setup() {
 
 
 void loop(){
-  medirTempHum();
-  /*sensorValue = analogRead(0);       // read analog input pin 0
-  Serial.print("AirQua=");
-  Serial.print(sensorValue, DEC);  // prints the value read
-  Serial.println(" PPM");
-  lcd.setCursor(0,0);
-  lcd.print("ArQ=");
-  lcd.print(sensorValue,DEC);
-  lcd.print(" PPM");
-  lcd.println("       "); 
-  lcd.print("  ");
-  delay(2000); */                       // wait 100ms for next reading
+  //medirTempHum();
+  medirGas(0);
+}
+
+void medirGas(int pin){
+  sensorValue = analogRead(pin);       // read analog input pin 0
+  imprimirConsolaGas(2000, sensorValue); 
 }
 
 void medirTempHum(){
@@ -61,5 +56,12 @@ void medirTempHum(){
   Serial.print(hif);
   Serial.println(" *F");
   
+}
+
+void imprimirConsolaGas(int milis, int ppm){
+  Serial.print("AirQua=");
+  Serial.print(ppm, DEC);  // prints the value read
+  Serial.println(" PPM");
+  delay(2000);   
 }
 
