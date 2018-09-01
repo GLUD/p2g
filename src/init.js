@@ -43,7 +43,7 @@ function create(){
     console.log("Soy create");
 
 //Adicion imagenes y sprites
-    this.add.image(500,120, "fondoT");
+    this.add.image(500,120, "fondoN");
     var can = this.add.image(1200,570, "caneca").setScale(0.2,0.2);
 
     
@@ -104,8 +104,8 @@ var cindyThrow = {
    
 
 //Events
-    this.input.keyboard.on('keydown_SPACE', function (event) {
-        if(cin.body.x-){
+    /* this.input.keyboard.on('keydown_SPACE', function (event) {
+        if(x){
             cin.anims.play("cindyArroja");
         }else{
             cin.anims.play("cindyArroja");
@@ -113,6 +113,7 @@ var cindyThrow = {
         
 
     });
+ */
 
     this.input.keyboard.on('keydown_UP', function (event) {
 
