@@ -25,6 +25,7 @@ function preload(){
 //Precarga de imagenes,sprites, sonidos, teclado.
     teclado = this.input.keyboard.createCursorKeys();
     console.log("Soy preload");
+    this.load.image("logo", "assets/logo.png");
     this.load.image("fondoT", "assets/bg/wallTemplado.png");
     this.load.image("fondoF", "assets/bg/cold.jpg");
     this.load.image("fondoN", "assets/bg/snow.jpg");
@@ -93,7 +94,7 @@ var cindyThrow = {
     this.physics.world.enable([ can ]);
     can.body.setVelocity(0,0);
 
-
+    this.add.image(1150,150, "logo").setScale(0.3);
     this.add.image(600,600, "basura1").setScale(2,2);
     this.add.image(800,600, "basura2").setScale(2,2);
     this.add.image(360,360, "basura3").setScale(2,2);
